@@ -1,0 +1,116 @@
+body{
+	background: #E5E5E5;
+}
+
+header{
+	width: 100%;
+}
+
+main{
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+main .texto{
+	display: inline-block;
+	text-align: center;
+	width: 60%;
+	height: 480px;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	/*border: 2px solid #000000;
+	border-radius: 10px;*/
+}
+
+.texto textarea{
+	display: block;
+	width: 100%;
+	height: 85%;
+	margin-bottom: 10px;
+	background: #E5E5E5;
+	border-width: 0;
+	resize: none;
+}
+
+.texto span{
+	display: block;
+	text-align: left;
+	margin-left: 20px;
+	font-size: 12px;
+}
+
+.texto span img{
+	width: 12px;
+}
+
+.texto button{
+	width: 45%;
+	height: 40px;
+	margin: 0 5px;
+	border-radius: 24px;
+	cursor: pointer;
+}
+
+.btnEncriptar{
+	background: #0A3871;
+	border: 1px solid #0A3871;
+	color: #FFFFFF;
+}
+
+.btnDesencriptar{
+	background: #D8DFE8;
+	border: 1px solid #0A3871;
+	color: #0A3871;
+}
+
+main .botones{
+	background: #FFFFFF;
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	height: 480px;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	/*border: 2px solid #000000;*/
+	border-radius: 10px;
+}
+
+.botones img{
+	width: 95%;
+}
+
+.ad1{
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.ad2{
+	font-size: 16px;
+}
+
+.botones textarea{
+	display: none;
+	width: 100%;
+	height: 83%;
+	margin-bottom: 10px;
+	background: #FFFFFF;
+	border-width: 0;
+	resize: none;
+}
+
+.botones button{
+	width: 90%;
+	height: 40px;
+	margin: 0 5px;
+	border-radius: 24px;
+	cursor: pointer;
+	border: 1px solid #0A3871;
+	color: #0A3871;
+}

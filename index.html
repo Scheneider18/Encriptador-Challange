@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Challenge - Encriptador</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+
+	<body>
+
+		<header>
+			<div class="logo">
+				<img src="imagenes/Vector.png">
+			</div>
+		</header>
+
+		<main>
+			<div class="texto">
+				<textarea id="texto" placeholder="Ingrese el texto aqui"></textarea>
+				<span> <img src="imagenes/exclamacion.png"> Solo letras minúsculas y sin acentos</span>
+				<button class="btnEncriptar" onclick="clickEncriptar()">Encriptar</button>
+				<button class="btnDesencriptar" onclick="clickDesencriptar()">Desencriptar</button>
+			</div>
+
+			<div class="botones">
+				<img id="imgnoexiste" src="imagenes/Muñeco.png">
+				<label id="ad1" class="ad1">Ningún mensaje fue encontrado</label>
+				<label id="ad2" class="ad2">Ingresa el texto que desees encriptar o desencriptar</label>
+				<textarea id="resultado" hidden="true" readonly></textarea>
+				<button id="copiar" onclick="copiar('resultado')" hidden>Copiar</button>
+			</div>
+		</main>
+
+		<span>Realizado por: Axel Rogelio Alba Garcia Grupo 5 Oracle ONE</span>
+
+		<script type="text/javascript">
+			const clickEncriptar = () => {
+				let inputValue = document.getElementById("texto").value;
+  				document.getElementById("copiar").innerHTML = "Copiar";
+				if(inputValue === ""){
+					return alert("Por favor ingrese frase a encriptar o desencriptar");
+				}else{
+					document.getElementById("ad1").innerHTML = "";
+					document.getElementById("ad2").innerHTML = "";
+					document.getElementById("imgnoexiste").removeAttribute("src");
+					document.getElementById("copiar").removeAttribute("hidden");
+					document.getElementById("resultado").style.display = "block";
+
+					let msgCifrado = encriptar(inputValue);
+
+					document.getElementById("resultado").innerHTML = msgCifrado;
+				}
+				
+			}
+
+			const clickDesencriptar = () => {
+				let inputValue = document.getElementById("texto").value;
+  				document.getElementById("copiar").innerHTML = "Copiar";
+				if(inputValue === ""){
+					return alert("Por favor ingrese frase a encriptar o desencriptar");
+				}else{
+					document.getElementById("ad1").innerHTML = "";
+					document.getElementById("ad2").innerHTML = "";
+					document.getElementById("imgnoexiste").removeAttribute("src");
+					document.getElementById("copiar").removeAttribute("hidden");
+					document.getElementById("resultado").style.display = "block";
+
+					let msgCifrado = desencriptar(inputValue);
+
+					document.getElementById("resultado").innerHTML = msgCifrado;
+				}
+			}
+
+			const encriptar = (msg) => {
+				var texto = msg;
+    			var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
+
+    			return textoCifrado;
+			}
+
+			const desencriptar = (msg) => {
+				var texto = msg; 
+				var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
+
+				return textoCifrado;
+			}
+
+			const copiar = (id_elemento) => {
+				var aux = document.createElement("input");
+  				aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+  				document.body.appendChild(aux);
+  				aux.select();
+  				document.execCommand("copy");
+  				document.body.removeChild(aux);
+
+  				document.getElementById("copiar").innerHTML = "Copiado";
+			}
+		</script>
+
+	</body>
+
+</html>
